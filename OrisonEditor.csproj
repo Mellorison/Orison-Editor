@@ -1,0 +1,744 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D8FEEAD0-66CC-4C1A-9D65-CCA5D30D9355}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OrisonEditor</RootNamespace>
+    <AssemblyName>OrisonEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>publish/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://www.danieltumelo.com/</InstallUrl>
+    <UpdateUrl>http://www.ogmoeditor.com/download/</UpdateUrl>
+    <SupportUrl>http://www.ogmoeditor.com/</SupportUrl>
+    <ProductName>Ogmo Editor</ProductName>
+    <PublisherName>Ogmo Editor</PublisherName>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>oricon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clipboard\ClipboardItem.cs" />
+    <Compile Include="Clipboard\EntityClipboardItem.cs" />
+    <Compile Include="Clipboard\GridClipboardItem.cs" />
+    <Compile Include="Clipboard\TileClipboardItem.cs" />
+    <Compile Include="ColorChooser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ColorChooser.Designer.cs">
+      <DependentUpon>ColorChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Definitions\LayerDefinitions\GridLayerDefinition.cs" />
+    <Compile Include="Definitions\LayerDefinitions\LayerDefinition.cs" />
+    <Compile Include="Definitions\LayerDefinitions\EntityLayerDefinition.cs" />
+    <Compile Include="Definitions\LayerDefinitions\TileLayerDefinition.cs" />
+    <Compile Include="Definitions\EntityDefinition.cs" />
+    <Compile Include="Definitions\Tileset.cs" />
+    <Compile Include="Definitions\ValueDefinitions\BoolValueDefinition.cs" />
+    <Compile Include="Definitions\ValueDefinitions\ColorValueDefinition.cs" />
+    <Compile Include="Definitions\ValueDefinitions\EnumValueDefinition.cs" />
+    <Compile Include="Definitions\ValueDefinitions\FloatValueDefinition.cs" />
+    <Compile Include="Definitions\ValueDefinitions\IntValueDefinition.cs" />
+    <Compile Include="Definitions\ValueDefinitions\StringValueDefinition.cs" />
+    <Compile Include="ImagePreviewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImagePreviewer.Designer.cs">
+      <DependentUpon>ImagePreviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelData\Layers\Entity.cs" />
+    <Compile Include="LevelData\Layers\GridSelection.cs" />
+    <Compile Include="LevelData\Layers\TileSelection.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityMoveNodeAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridClearSelectionAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridDeleteSelectionAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridMoveSelectionAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridPasteSelectionAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridSelectAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileClearSelectionAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileDeleteSelectionAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileMoveSelectionAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TilePasteSelectionAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileSelectAction.cs" />
+    <Compile Include="LevelData\Layers\Value.cs" />
+    <Compile Include="LevelEditors\LevelValueEditors\LevelBoolValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelBoolValueEditor.Designer.cs">
+      <DependentUpon>LevelBoolValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelColorValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelColorValueEditor.Designer.cs">
+      <DependentUpon>LevelColorValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelEnumValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelEnumValueEditor.Designer.cs">
+      <DependentUpon>LevelEnumValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelFloatValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelFloatValueEditor.Designer.cs">
+      <DependentUpon>LevelFloatValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelIntValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelIntValueEditor.Designer.cs">
+      <DependentUpon>LevelIntValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelStringValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\LevelValueEditors\LevelStringValueEditor.Designer.cs">
+      <DependentUpon>LevelStringValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrawUtil.cs" />
+    <Compile Include="LevelEditors\Resizers\GridResizer.cs" />
+    <Compile Include="LevelEditors\Resizers\Resizer.cs" />
+    <Compile Include="LevelEditors\Resizers\TileResizer.cs" />
+    <Compile Include="LevelEditors\Actions\ActionBatch.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityAddNodeAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityInsertNodeAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityMoveAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityRemoveAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityRemoveNodeAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityResizeAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityRotateAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntitySetValueAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridDrawAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridFloodAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridRectangleAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityAddAction.cs" />
+    <Compile Include="LevelEditors\Actions\LevelActions\LevelResizeAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileDrawAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileFloodAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileRectangleAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileSetTilesetAction.cs" />
+    <Compile Include="LevelEditors\LevelProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\LevelProperties.Designer.cs">
+      <DependentUpon>LevelProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\Tools\EntityTools\EntityAddNodeTool.cs" />
+    <Compile Include="LevelEditors\Tools\EntityTools\EntityEraseTool.cs" />
+    <Compile Include="LevelEditors\Tools\EntityTools\EntityInsertNodeTool.cs" />
+    <Compile Include="LevelEditors\Tools\EntityTools\EntityMoveTool.cs" />
+    <Compile Include="LevelEditors\Tools\EntityTools\EntityResizeTool.cs" />
+    <Compile Include="LevelEditors\Tools\EntityTools\EntitySelectionTool.cs" />
+    <Compile Include="LevelEditors\Tools\GridTools\GridFloodTool.cs" />
+    <Compile Include="LevelEditors\Tools\GridTools\GridLineTool.cs" />
+    <Compile Include="LevelEditors\Tools\GridTools\GridMoveSelectionTool.cs" />
+    <Compile Include="LevelEditors\Tools\GridTools\GridPencilTool.cs" />
+    <Compile Include="LevelEditors\Tools\GridTools\GridRectangleTool.cs" />
+    <Compile Include="LevelEditors\Tools\EntityTools\EntityPlacementTool.cs" />
+    <Compile Include="LevelEditors\Tools\GridTools\GridSelectionTool.cs" />
+    <Compile Include="LevelEditors\Tools\TileTools\TileEyedropperTool.cs" />
+    <Compile Include="LevelEditors\Tools\TileTools\TileFloodTool.cs" />
+    <Compile Include="LevelEditors\Tools\TileTools\TileLineTool.cs" />
+    <Compile Include="LevelEditors\Tools\TileTools\TileMoveSelectionTool.cs" />
+    <Compile Include="LevelEditors\Tools\TileTools\TilePencilTool.cs" />
+    <Compile Include="LevelEditors\Tools\TileTools\TileRectangleTool.cs" />
+    <Compile Include="LevelEditors\Tools\TileTools\TileSelectionTool.cs" />
+    <Compile Include="LevelEditors\ValueEditors\BoolValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\BoolValueEditor.Designer.cs">
+      <DependentUpon>BoolValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\ColorValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\ColorValueEditor.Designer.cs">
+      <DependentUpon>ColorValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\EnumValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\EnumValueEditor.Designer.cs">
+      <DependentUpon>EnumValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\FloatValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\FloatValueEditor.Designer.cs">
+      <DependentUpon>FloatValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\IntValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\IntValueEditor.Designer.cs">
+      <DependentUpon>IntValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\StringValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\StringValueEditor.Designer.cs">
+      <DependentUpon>StringValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\ValueEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LevelEditors\ValueEditors\ValueEditor.Designer.cs">
+      <DependentUpon>ValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AboutWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\AboutWindow.Designer.cs">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EntitySelectionImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\EntitySelectionImage.Designer.cs">
+      <DependentUpon>EntitySelectionImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EntitySelectionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\LayerButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\LayerButton.Designer.cs">
+      <DependentUpon>LayerButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LevelData\Layers\GridLayer.cs" />
+    <Compile Include="LevelData\Layers\Layer.cs" />
+    <Compile Include="LevelData\Layers\EntityLayer.cs" />
+    <Compile Include="LevelData\Layers\TileLayer.cs" />
+    <Compile Include="LevelData\Level.cs" />
+    <Compile Include="LevelEditors\LevelView.cs" />
+    <Compile Include="LevelEditors\Actions\LevelActions\LevelAction.cs" />
+    <Compile Include="LevelEditors\Actions\OrisonAction.cs" />
+    <Compile Include="LevelEditors\Actions\GridActions\GridAction.cs" />
+    <Compile Include="LevelEditors\Actions\EntityActions\EntityAction.cs" />
+    <Compile Include="LevelEditors\Actions\TileActions\TileAction.cs" />
+    <Compile Include="LevelEditors\LayerEditors\GridLayerEditor.cs" />
+    <Compile Include="LevelEditors\LayerEditors\LayerEditor.cs" />
+    <Compile Include="LevelEditors\LayerEditors\EntityLayerEditor.cs" />
+    <Compile Include="LevelEditors\LayerEditors\TileLayerEditor.cs" />
+    <Compile Include="LevelEditors\Tools\GridTools\GridTool.cs" />
+    <Compile Include="LevelEditors\Tools\EntityTools\EntityTool.cs" />
+    <Compile Include="LevelEditors\Tools\TileTools\TileTool.cs" />
+    <Compile Include="LevelEditors\Tools\Tool.cs" />
+    <Compile Include="LevelEditors\LevelEditor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orison.cs" />
+    <Compile Include="OrisonColor.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="ProjectEditors\IProjectChanger.cs" />
+    <Compile Include="ProjectEditors\LayerDefinitionEditors\GridLayerDefinitionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\LayerDefinitionEditors\GridLayerDefinitionEditor.Designer.cs">
+      <DependentUpon>GridLayerDefinitionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\LayerDefinitionEditors\TileLayerDefinitionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\LayerDefinitionEditors\TileLayerDefinitionEditor.Designer.cs">
+      <DependentUpon>TileLayerDefinitionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\LayerDefinitionsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\LayerDefinitionsEditor.Designer.cs">
+      <DependentUpon>LayerDefinitionsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\EntityDefinitionsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\EntityDefinitionsEditor.Designer.cs">
+      <DependentUpon>EntityDefinitionsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\ProjectEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\ProjectEditor.Designer.cs">
+      <DependentUpon>ProjectEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrisonParse.cs" />
+    <Compile Include="ProjectEditors\SettingsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\SettingsEditor.Designer.cs">
+      <DependentUpon>SettingsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\TilesetsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\TilesetsEditor.Designer.cs">
+      <DependentUpon>TilesetsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\BoolValueDefinitionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\BoolValueDefinitionEditor.Designer.cs">
+      <DependentUpon>BoolValueDefinitionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\ColorValueDefinitionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\ColorValueDefinitionEditor.Designer.cs">
+      <DependentUpon>ColorValueDefinitionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\EnumValueDefinitionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\EnumValueDefinitionEditor.Designer.cs">
+      <DependentUpon>EnumValueDefinitionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\FloatValueDefinitionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\FloatValueDefinitionEditor.Designer.cs">
+      <DependentUpon>FloatValueDefinitionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\IntValueDefinitionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\IntValueDefinitionEditor.Designer.cs">
+      <DependentUpon>IntValueDefinitionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\StringValueDefinitionEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\StringValueDefinitionEditor.Designer.cs">
+      <DependentUpon>StringValueDefinitionEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\ValueDefinitionsEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectEditors\ValueDefinitionEditors\ValueDefinitionsEditor.Designer.cs">
+      <DependentUpon>ValueDefinitionsEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Definitions\ValueDefinitions\ValueDefinition.cs" />
+    <Compile Include="Windows\LayersWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\EntityButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\EntityButton.Designer.cs">
+      <DependentUpon>EntityButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EntitiesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\OrisonWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\OrisonWindow.Designer.cs">
+      <DependentUpon>OrisonWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\PreferencesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\PreferencesWindow.Designer.cs">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\StartPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\StartPage.Designer.cs">
+      <DependentUpon>StartPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TilePaletteWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\TileSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\TileSelector.Designer.cs">
+      <DependentUpon>TileSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ToolButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Windows\ToolButton.Designer.cs">
+      <DependentUpon>ToolButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="Windows\ToolsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Utilities\ShiftRenameLevelsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Utilities\ShiftRenameLevelsWindow.Designer.cs">
+      <DependentUpon>ShiftRenameLevelsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Utilities\ResaveLevelsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Utilities\ResaveLevelsWindow.Designer.cs">
+      <DependentUpon>ResaveLevelsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Utilities\SwapRenameLevelsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Utilities\SwapRenameLevelsWindow.Designer.cs">
+      <DependentUpon>SwapRenameLevelsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Utilities\UtilityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ColorChooser.resx">
+      <DependentUpon>ColorChooser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImagePreviewer.resx">
+      <DependentUpon>ImagePreviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\LevelProperties.resx">
+      <DependentUpon>LevelProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\LevelValueEditors\LevelBoolValueEditor.resx">
+      <DependentUpon>LevelBoolValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\LevelValueEditors\LevelColorValueEditor.resx">
+      <DependentUpon>LevelColorValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\LevelValueEditors\LevelEnumValueEditor.resx">
+      <DependentUpon>LevelEnumValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\LevelValueEditors\LevelFloatValueEditor.resx">
+      <DependentUpon>LevelFloatValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\LevelValueEditors\LevelIntValueEditor.resx">
+      <DependentUpon>LevelIntValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\LevelValueEditors\LevelStringValueEditor.resx">
+      <DependentUpon>LevelStringValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\ValueEditors\BoolValueEditor.resx">
+      <DependentUpon>BoolValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\ValueEditors\ColorValueEditor.resx">
+      <DependentUpon>ColorValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\ValueEditors\EnumValueEditor.resx">
+      <DependentUpon>EnumValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\ValueEditors\FloatValueEditor.resx">
+      <DependentUpon>FloatValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\ValueEditors\IntValueEditor.resx">
+      <DependentUpon>IntValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LevelEditors\ValueEditors\StringValueEditor.resx">
+      <DependentUpon>StringValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\AboutWIndow.resx">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\EntitySelectionImage.resx">
+      <DependentUpon>EntitySelectionImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\LayerButton.resx">
+      <DependentUpon>LayerButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\LayerDefinitionEditors\GridLayerDefinitionEditor.resx">
+      <DependentUpon>GridLayerDefinitionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\LayerDefinitionEditors\TileLayerDefinitionEditor.resx">
+      <DependentUpon>TileLayerDefinitionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\LayerDefinitionsEditor.resx">
+      <DependentUpon>LayerDefinitionsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\EntityDefinitionsEditor.resx">
+      <DependentUpon>EntityDefinitionsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\ProjectEditor.resx">
+      <DependentUpon>ProjectEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\SettingsEditor.resx">
+      <DependentUpon>SettingsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\TilesetsEditor.resx">
+      <DependentUpon>TilesetsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\ValueDefinitionEditors\BoolValueDefinitionEditor.resx">
+      <DependentUpon>BoolValueDefinitionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\ValueDefinitionEditors\ColorValueDefinitionEditor.resx">
+      <DependentUpon>ColorValueDefinitionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\ValueDefinitionEditors\EnumValueDefinitionEditor.resx">
+      <DependentUpon>EnumValueDefinitionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\ValueDefinitionEditors\FloatValueDefinitionEditor.resx">
+      <DependentUpon>FloatValueDefinitionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\ValueDefinitionEditors\IntValueDefinitionEditor.resx">
+      <DependentUpon>IntValueDefinitionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\ValueDefinitionEditors\StringValueDefinitionEditor.resx">
+      <DependentUpon>StringValueDefinitionEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectEditors\ValueDefinitionEditors\ValueDefinitionsEditor.resx">
+      <DependentUpon>ValueDefinitionsEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\EntityButton.resx">
+      <DependentUpon>EntityButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\OrisonWindow.resx">
+      <DependentUpon>OrisonWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\PreferencesWindow.resx">
+      <DependentUpon>PreferencesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\StartPage.resx">
+      <DependentUpon>StartPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\TileSelector.resx">
+      <DependentUpon>TileSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\ToolButton.resx">
+      <DependentUpon>ToolButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Utilities\ShiftRenameLevelsWindow.resx">
+      <DependentUpon>ShiftRenameLevelsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Utilities\ResaveLevelsWindow.resx">
+      <DependentUpon>ResaveLevelsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Utilities\SwapRenameLevelsWindow.resx">
+      <DependentUpon>SwapRenameLevelsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\bg.png" />
+    <Content Include="bin\Debug\Content\bg.png" />
+    <Content Include="bin\Debug\Content\broken.png" />
+    <Content Include="bin\Debug\Content\changelog.html" />
+    <Content Include="bin\Debug\Content\icons\icon32.png" />
+    <Content Include="bin\Debug\Content\icons\lvl32.png" />
+    <Content Include="bin\Debug\Content\layers\entity.png" />
+    <Content Include="bin\Debug\Content\layers\grid.png" />
+    <Content Include="bin\Debug\Content\layers\tile.png" />
+    <Content Include="bin\Debug\Content\logo.png" />
+    <Content Include="bin\Debug\Content\tools\addNode.png" />
+    <Content Include="bin\Debug\Content\tools\eraser.png" />
+    <Content Include="bin\Debug\Content\tools\eyedropper.png" />
+    <Content Include="bin\Debug\Content\tools\flood.png" />
+    <Content Include="bin\Debug\Content\tools\insertNode.png" />
+    <Content Include="bin\Debug\Content\tools\line.png" />
+    <Content Include="bin\Debug\Content\tools\move.png" />
+    <Content Include="bin\Debug\Content\tools\pencil.png" />
+    <Content Include="bin\Debug\Content\tools\rectangle.png" />
+    <Content Include="bin\Debug\Content\tools\resize.png" />
+    <Content Include="bin\Debug\Content\tools\rotate.png" />
+    <Content Include="bin\Debug\Content\tools\selection.png" />
+    <Content Include="Content\bg.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\broken.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\changelog.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\icons\icon32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\icons\lvl32.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\icons\ORISON LOGO%281%29.png" />
+    <Content Include="Content\layers\grid.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\layers\entity.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\layers\tile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\orisonlogone.png" />
+    <Content Include="Content\tools\addNode.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\eraser.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\eyedropper.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\flood.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\insertNode.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\line.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\move.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\pencil.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\rectangle.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\resize.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\rotate.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\tools\selection.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="icon32.ico" />
+    <Content Include="lvl32.ico" />
+    <Content Include="lvl86.ico" />
+    <Content Include="oricon.ico" />
+    <Content Include="proj32.ico" />
+    <Content Include="proj86.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FileAssociation Include=".oel">
+      <Visible>False</Visible>
+      <Description>Ogmo Editor Level File</Description>
+      <Progid>LevelFile</Progid>
+      <DefaultIcon>lvl32.ico</DefaultIcon>
+    </FileAssociation>
+    <FileAssociation Include=".oep">
+      <Visible>False</Visible>
+      <Description>Ogmo Editor Project File</Description>
+      <Progid>ProjectFile</Progid>
+      <DefaultIcon>proj32.ico</DefaultIcon>
+    </FileAssociation>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

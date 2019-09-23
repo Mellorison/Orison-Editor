@@ -1,0 +1,138 @@
+﻿<html>
+	<head>
+		<title>Ogmo Editor Changelog</title>
+		<style>
+			body {
+				font-family: Consolas;
+				background-image: url('bg.png');
+			}
+
+			h1 {
+				text-align: center;
+				text-decoration: underline;
+			}
+
+			h2 {
+				text-decoration: underline;
+				margin-left: 10px;
+				margin-bottom: 2px;
+				margin-top: 2px;
+			}
+
+			h3 {
+				margin-left: 30px;
+			}
+
+			ul {
+				margin-left: 20px;
+			}
+
+			.date {
+				margin-top: 2px;
+				font-style: italic;
+				font-size: 75%;
+			}
+
+			.version {
+				margin-left: auto;
+				margin-right: auto;
+				width: auto;
+				padding: 20px;
+				background-color: white;
+				box-shadow: 3px 3px 4px black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>ChangeLog</h1>
+
+    <div class="version">
+      <h2>2.1.0.6</h2>
+      <p class="date">May 4, 2019</p>
+      <h3>Changes</h3>
+      <ul>
+        <li>Tool windows are now resizable</li>
+      </ul>
+    </div>
+
+    <div class="version">
+      <h2>2.1.0.4</h2>
+      <p class="date">August 18, 2019</p>
+      <h3>Fixes</h3>
+      <ul>
+        <li>Fixed Shift Renamer crash</li>
+        <li>Fixed tilemaps with XML export modes not being salvageable if the level size is wrong</li>
+        <li>Fixed tilemaps not drawing at half alpha above the current layer</li>
+        <li>Fixed crash on level resize in some cases involved tile layers</li>
+        <li>Reversed the order of layers in the layer window so it makes sense now</li>
+      </ul>
+    </div>
+    
+    <div class="version">
+      <h2>2.1.0.3</h2>
+      <p class="date">August 18, 2019</p>
+      <h3>Fixes</h3>
+      <ul>
+        <li>Optimized tile layers</li>
+        <li>Fixed Entity rotation not happening around the origin</li>
+      </ul>
+    </div>
+    
+    <div class="version">
+      <h2>2.1.0.2</h2>
+      <p class="date">August 19, 2019</p>
+      <h3>Fixes</h3>
+      <ul>
+        <li>Fixed tile palette being scaled weirdly with some PNG files</li>
+        <li>Fixed tools window not autosizing</li>
+      </ul>
+    </div>
+    
+		    <div class="version">
+			    <h2>2.1.0.0</h2>
+			    <p class="date">August 10, 2019</p>
+				    <h3>Changes</h3>
+          <ul>
+            <li>Rewrote rendering code to remove XNA from Orison Editor!</li>
+            <li>Various visual improvements</li>
+            <li>Entities can now be both tiled and rotatable</li>
+            <li>Added grid layer export option: Grid Rectangles</li>
+            <li>Better and More descriptive salvaged level options</li>
+            <li>
+              Lots of optimizations, particularly:<ul>
+              <li>All tile layer actions</li>
+              <li>Entity move and scale actions</li>
+            </ul></li>
+            <li>View changes:<ul>
+						  <li>Zooming now scales at the mouse position</li>
+						  <li>Can now press the HOME key to center the level view</li>
+						  <li>Can now press +/- to zoom in/out</li>
+            </ul></li>						
+						<li>Entity selection tool:<ul>
+							<li>Right-click now deselects</li>
+							<li>CTRL+select now toggles selection on entity</li>
+              <li>Copy/paste now ends with all pasted entities selected</li>
+						</ul></li>
+            <li>Added level batch utilities:<ul>
+              <li>Batch Resaver - resave levels to quickly apply project changes</li>
+              <li>Shift Renamer - rename levels to help rearrange their numerical order</li>
+              <li>Swap Renamer - quickly swap the filenames of two level files</li>
+            </ul></li> 
+						<li>Added this changelog to the start page</li>
+						<li>Added website/donate buttons to the about window and start page</li>
+					</ul>
+				<h3>Fixes</h3>
+					<ul>
+						<li>Fixed tile palette sometimes being blank on startup</li>
+						<li>Fixed tile layers not drawing if the graphics card resets</li>
+						<li>Fixed tileset dropdown sometimes capturing WASD input</li>
+						<li>Tile selector now returns focus to the level editor on mouse selection</li>
+						<li>Fixed tile selector not applying tile separation correctly</li>
+						<li>Tile tools now correctly apply multi-tile selections</li>
+						<li>Entity previews in the entity selector now crop correctly</li>
+            <li>Fixed editor sometimes crashing on entity paste</li>
+					</ul>	
+        </div>
+	</body>
+</html>
