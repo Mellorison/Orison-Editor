@@ -9,7 +9,7 @@ namespace OrisonEditor.Clipboard
 {
     public abstract class ClipboardItem
     {
-        public abstract bool CanPaste(Layer layer); 
-        public abstract void Paste(LevelEditor editor, Layer layer); //Level Editor Layer abstract
+        public abstract bool CanPaste(Layer layer); //Paste Layer
+        public abstract void Paste(LevelEditor editor, Layer layer); //Level Editor Layer abstract.
     }
 }
