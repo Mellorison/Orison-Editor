@@ -13,7 +13,7 @@ is your property and is not subject to any license agreement. The remainder of t
 license agreement applies to the Orison Editor program itself and its source code. 
 
 This program is free software: you can redistribute it and/or modify
-it under the terms of the Orison General Public License .
+it under the terms of the Orison Softworks Public License .
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
