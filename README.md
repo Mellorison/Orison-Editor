@@ -1,6 +1,6 @@
 								ORISON EDITOR
 
-Orison Editor: The generic level editor for indie game developers!
+Orison Editor: The 2D game level editor for indie game developers!
 By Daniel Tumelo
 www.danieltumelo.teammakkon.com
 mellorison@gmail.com
