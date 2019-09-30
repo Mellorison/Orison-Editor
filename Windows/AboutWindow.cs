@@ -25,10 +25,10 @@ namespace OrisonEditor.Windows
             Orison.MainWindow.EnableEditing();
         }
 
-        private void donateButton_Click(object sender, EventArgs e)
+        /*private void donateButton_Click(object sender, EventArgs e)
         {
             Orison.DonationLink();
-        }
+        }*/
 
         private void websiteButton_Click(object sender, EventArgs e)
         {

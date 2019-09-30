@@ -35,7 +35,7 @@
             this.twitterPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
-            this.donateButton = new System.Windows.Forms.Button();
+            //this.donateButton = new System.Windows.Forms.Button();
             this.websiteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.recentPanel.SuspendLayout();
@@ -119,14 +119,14 @@
             // 
             // donateButton
             // 
-            this.donateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            /*this.donateButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.donateButton.Location = new System.Drawing.Point(552, 454);
             this.donateButton.Name = "donateButton";
             this.donateButton.Size = new System.Drawing.Size(88, 23);
             this.donateButton.TabIndex = 5;
             this.donateButton.Text = "Donate!";
             this.donateButton.UseVisualStyleBackColor = true;
-            this.donateButton.Click += new System.EventHandler(this.donateButton_Click);
+            this.donateButton.Click += new System.EventHandler(this.donateButton_Click);*/
             // 
             // websiteButton
             // 
@@ -145,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.websiteButton);
-            this.Controls.Add(this.donateButton);
+            //this.Controls.Add(this.donateButton);
             this.Controls.Add(this.webBrowser);
             this.Controls.Add(this.twitterPanel);
             this.Controls.Add(this.recentPanel);
@@ -167,7 +167,7 @@
         private System.Windows.Forms.Panel twitterPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.WebBrowser webBrowser;
-        private System.Windows.Forms.Button donateButton;
+        //private System.Windows.Forms.Button donateButton;
         private System.Windows.Forms.Button websiteButton;
     }
 }

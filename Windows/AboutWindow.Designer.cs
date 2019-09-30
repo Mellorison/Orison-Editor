@@ -38,7 +38,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.versionLabel = new System.Windows.Forms.Label();
-            this.donateButton = new System.Windows.Forms.Button();
+            /*this.donateButton = new System.Windows.Forms.Button();*/
             this.websiteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -131,13 +131,13 @@
             // 
             // donateButton
             // 
-            this.donateButton.Location = new System.Drawing.Point(386, 251);
+           /* this.donateButton.Location = new System.Drawing.Point(386, 251);
             this.donateButton.Name = "donateButton";
             this.donateButton.Size = new System.Drawing.Size(86, 23);
             this.donateButton.TabIndex = 9;
             this.donateButton.Text = "Donate (PayPal)";
             this.donateButton.UseVisualStyleBackColor = true;
-            this.donateButton.Click += new System.EventHandler(this.donateButton_Click);
+            this.donateButton.Click += new System.EventHandler(this.donateButton_Click);*/
             // 
             // websiteButton
             // 
@@ -156,7 +156,7 @@
             this.ClientSize = new System.Drawing.Size(484, 338);
             this.ControlBox = false;
             this.Controls.Add(this.websiteButton);
-            this.Controls.Add(this.donateButton);
+            //this.Controls.Add(this.donateButton);
             this.Controls.Add(this.versionLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -189,7 +189,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label versionLabel;
-        private System.Windows.Forms.Button donateButton;
+        //private System.Windows.Forms.Button donateButton;
         private System.Windows.Forms.Button websiteButton;
     }
 }
