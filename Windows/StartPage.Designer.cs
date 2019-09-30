@@ -167,7 +167,7 @@
         private System.Windows.Forms.Panel twitterPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.WebBrowser webBrowser;
-        //private System.Windows.Forms.Button donateButton;
+        ///private System.Windows.Forms.Button donateButton;
         private System.Windows.Forms.Button websiteButton;
     }
 }
